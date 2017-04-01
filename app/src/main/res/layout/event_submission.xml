@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Name of Event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:id="@+id/NameOfEvent"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="50dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/NameOfEvent"
+        android:id="@+id/eventNameEdit"
+        android:hint="Name of Event"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"/>
+    <TextView
+        android:text="Name of Organization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:id="@+id/nameOrg"
+        android:layout_below="@+id/eventNameEdit"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameOrg"
+        android:id="@+id/nameOrgEdit"
+        android:hint="Name of Organization"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"/>
+    <!--Eventually change location from just a string to a drop down of the different buildings on campus with GPS coordinates tied to them-->
+    <TextView
+        android:text="Location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:id="@+id/location"
+        android:layout_below="@+id/nameOrgEdit"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location"
+        android:id="@+id/locationEdit"
+        android:hint="Building and Room Number"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"/>
+
+    <TextView
+        android:text="Time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:id="@+id/time"
+        android:layout_below="@+id/locationEdit"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time"
+        android:id="@+id/timeEdit"
+        android:inputType="time"
+        android:ems="10"
+        android:hint="HH:MM"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"/>
+
+
+
+    <Button
+        android:text="POST!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/postEvent"
+        android:onClick="postEvent"/>
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:layout_alignBottom="@+id/timeEdit"
+        android:layout_toRightOf="@+id/postEvent"
+        android:layout_toEndOf="@+id/postEvent"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
+
+
+</RelativeLayout>
