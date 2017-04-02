@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    // TODO: 4/2/17 High Priority: Add method to kick off searching events
+    // TODO: 4/2/17 Low Priority: Add in a settings method and activity
+
     public void eventSubmission(View view){
         Intent intent = new Intent(this, EventSubmission.class);
         startActivity(intent);

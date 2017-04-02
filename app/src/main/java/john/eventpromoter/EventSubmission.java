@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -79,7 +80,7 @@ public class EventSubmission extends Activity {
         mRef.setValue(event);
         // TODO: 4/2/17 find a way to maintain the database and clean out old values
 //        Log.d(TAG, "Event has been posted, with the values " + setValues);
-//        Toast toast = new Toast();
+        Toast.makeText(this, "Event Has Been Posted!", Toast.LENGTH_LONG).show();
         //Exit event post once it has been posted
         finish();
     }
