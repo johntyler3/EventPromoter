@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "381679506903-rmdo087ktpgc8pop4fo6uc4sdgd5p8n9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "john.eventpromoter",
+            "certificate_hash": "0bda2799545ecb1c1814b4493b4635b53fa4ec2a"
+          }
+        },
+        {
           "client_id": "381679506903-if5g8k69m306if7dccf2udtj1j6pc3l8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -30,6 +38,9 @@
       "api_key": [
         {
           "current_key": "AIzaSyAbN2T75SQ8_6KXo2gMvrR3_QDzjzmr9_w"
+        },
+        {
+          "current_key": "AIzaSyAFkj8DCbW0Jel1EN6Ie2_qt8mIKzNvZGY"
         }
       ],
       "services": {
