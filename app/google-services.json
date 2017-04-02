@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "381679506903",
+    "firebase_url": "https://eventpromoter-20168.firebaseio.com",
+    "project_id": "eventpromoter-20168",
+    "storage_bucket": "eventpromoter-20168.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381679506903:android:3b0a0b93b20f8905",
+        "android_client_info": {
+          "package_name": "john.eventpromoter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "381679506903-if5g8k69m306if7dccf2udtj1j6pc3l8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "john.eventpromoter",
+            "certificate_hash": "63696083b847c2c199e827af74dee540f3feb0a1"
+          }
+        },
+        {
+          "client_id": "381679506903-l1h1uqglr1n6ri4tj9afnseh6a4to40q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbN2T75SQ8_6KXo2gMvrR3_QDzjzmr9_w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "381679506903-l1h1uqglr1n6ri4tj9afnseh6a4to40q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
