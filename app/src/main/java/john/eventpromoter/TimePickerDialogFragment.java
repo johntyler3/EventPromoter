@@ -39,8 +39,21 @@ public class TimePickerDialogFragment extends DialogFragment implements TimePick
         editor.putInt("Minute", minute);
         editor.apply();
         EditText editText = (EditText) this.getActivity().findViewById(R.id.timeEdit);
-        // TODO: 4/2/17 Modify the editText display so that its not in military time, and shows AM/PM
-        editText.setText(hourOfDay + ": " + minute);
+        String minuteString = String.valueOf(minute);
+        String AM_PM = "AM";
+        if(minute < 10){
+            minuteString = "0" + minute;
+        }
+        if (hourOfDay >= 12){
+            if (hourOfDay > 12){
+                hourOfDay = hourOfDay - 12;
+            }
+            AM_PM = "PM";
+        }
+        if (hourOfDay == 0){
+            hourOfDay = 12;
+        }
+        editText.setText(hourOfDay + ": " + minuteString + " " + AM_PM);
         // Do something with the time chosen by the user
     }
 
