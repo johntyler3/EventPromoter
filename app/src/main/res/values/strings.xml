@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">EventPromoter</string>
+    <string name="app_name">Event Promoter</string>
     <string name="title_activity_maps">Map</string>
+    <string name="browse_events">Browse Events</string>
+    <string name="post_event">Post Event</string>
 
     <string-array name="buildings">
         <item> ADH - Almetris Duren Residence Hall</item>
@@ -102,7 +104,7 @@
         <item> PAT - J.T. Patterson Labs Bldg.</item>
         <item> PHD - Prather Hall Dormitory</item>
         <item> PHR - Pharmacy Building</item>
-        <item> POB - Peter O'Donnell Jr. Building</item>
+        <item> POB - Peter O\'Donnell Jr. Building</item>
         <item> PRH - Dobie Paisano Ranch House</item>
         <item> QTR - Quarters Building</item>
         <item> RHD - Roberts Hall Dormitory</item>

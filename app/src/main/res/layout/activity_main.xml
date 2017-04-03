@@ -11,16 +11,17 @@
     tools:context="john.eventpromoter.MainActivity">
 <!--todo Low Priority: Fill up the screen more, instead of having small buttons -->
     <Button
-        android:text="Browse Events"
+        android:text="@string/browse_events"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
         android:id="@+id/search"
         android:layout_below="@+id/post"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="searchEvents"/>
 
     <Button
-        android:text="Post Event"
+        android:text="@string/post_event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
@@ -34,7 +35,7 @@
         android:onClick="eventSubmission"/>
 
     <TextView
-        android:text="Event Promoter"
+        android:text="@string/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"

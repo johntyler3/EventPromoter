@@ -46,7 +46,6 @@ public class EventsList extends ListActivity {
                 R.layout.list_item, // android.R.layout.simple_list_item_1,
                 events);
 
-        // don't comment out!
         setListAdapter(adapter);
     }
 

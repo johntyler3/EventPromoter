@@ -20,4 +20,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, EventSubmission.class);
         startActivity(intent);
     }
+
+    public void searchEvents(View view){
+        // Not final of course, just seeing how the events list looks right now
+        Intent intent = new Intent(this, EventsList.class);
+        startActivity(intent);
+    }
 }
