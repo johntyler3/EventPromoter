@@ -1,39 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical">
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/homeButton"
+                android:onClick="homeButton"
+                android:text="Home"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="View Map"
+                android:id="@+id/viewMap"
+
+                android:onClick="viewMap"
+                android:visibility="visible"/>
+
+        </LinearLayout>
+
+
 
     <ListView
         android:id="@android:id/list"
-        android:layout_width="match_parent"
+        android:layout_below="@+id/linear_layout"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/viewMap"
         android:layout_alignParentTop="true" >
     </ListView>
 
-    <View android:id="@+id/fakeView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_centerInParent="true"/>
 
-    <Button
-        android:id="@+id/viewMap"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/fakeView"
-        android:text="View Map"
-        android:onClick="viewMap" />
-
-    <Button
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:layout_below="@android:id/list"
-        android:layout_toLeftOf="@id/fakeView"
-        android:id="@+id/homeButton"
-        android:onClick="homeButton"
-        android:text="Home"></Button>
-
-
-
-</RelativeLayout>
+    </LinearLayout>

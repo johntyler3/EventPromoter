@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -68,7 +69,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mEventMarkers.add(marker);
         }
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(30.286103, -97.739362)));
-        mMap.animateCamera( CameraUpdateFactory.zoomTo( 15.0f ) );
+        mMap.animateCamera( CameraUpdateFactory.zoomTo( 14.0f ) );
 
     }
 
@@ -79,6 +80,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Event event = mEventMap.get(marker.getTag().toString());
         Log.d(TAG, "Event Name: " + event.getEventName());
         Intent intent = new Intent(this, EventDisplayActivity.class).putExtra("Event", event);
+        startActivity(intent);
+    }
+
+    //button to browse events
+    public void browseEvents(View view){
+        // Not final of course, just seeing how the events list looks right now
+        Intent intent = new Intent(this, EventsList.class).putExtra("EventSet", mEventSet).putExtra("EventMap", mEventMap);
+        startActivity(intent);
+    }
+
+    public void homeButton(View view){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
