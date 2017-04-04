@@ -1,12 +1,13 @@
 package john.eventpromoter;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 /**
  * Created by ndseeg on 4/2/17.
  */
 
-public class Event {
+public class Event implements Serializable{
 
     private String eventID;
 
@@ -126,5 +127,35 @@ public class Event {
 
     public void setExtraDetails(String extraDetails) {
         this.extraDetails = extraDetails;
+    }
+
+    public String getFoodProvided() {
+        return foodProvided;
+    }
+
+    public String getBuildingCode() {
+        return buildingCode;
+    }
+
+    public String getRoomNumber() {
+        return roomNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "eventID='" + eventID + '\'' +
+                ", hour=" + hour +
+                ", minute=" + minute +
+                ", year=" + year +
+                ", month=" + month +
+                ", day=" + day +
+                ", eventName='" + eventName + '\'' +
+                ", orgName='" + orgName + '\'' +
+                ", extraDetails='" + extraDetails + '\'' +
+                ", foodProvided='" + foodProvided + '\'' +
+                ", buildingCode='" + buildingCode + '\'' +
+                ", roomNumber='" + roomNumber + '\'' +
+                '}';
     }
 }

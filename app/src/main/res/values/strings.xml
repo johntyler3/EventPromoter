@@ -5,142 +5,117 @@
     <string name="post_event">Post Event</string>
 
     <string-array name="buildings">
-        <item> ADH - Almetris Duren Residence Hall</item>
-        <item> AHG - Anna Hiss Gymnasium</item>
-        <item> ANB - Arno Nowotny Building</item>
-        <item> AND - Andrews Dormitory</item>
-        <item> ARC - Animal Resources Center</item>
-        <item> ART - Art Building and Museum</item>
-        <item> ATT - AT\u0026T Executive Educ \u0026 Conf Center</item>
-        <item> BAT - Batts Hall</item>
-        <item> BEL - L. Theo Bellmont Hall</item>
-        <item> BEN - Benedict Hall</item>
-        <item> BGH - Biological Sciences Greenhouses</item>
-        <item> BHD - Brackenridge Hall Dorm</item>
-        <item> BIO - Biological Laboratories</item>
-        <item> BLD - Blanton Dormitory</item>
-        <item> BMA - Jack S. Blanton Museum of Art</item>
-        <item> BMC - Belo Center for New Media</item>
-        <item> BME - Biomedical Engineering Building</item>
-        <item> BOT - Biological Greenhouse</item>
-        <item> BRB - Bernard and Audre Rapoport Center</item>
-        <item> BTL - Battle Hall</item>
-        <item> BUR - Burdine Hall</item>
-        <item> BWY - 2616 Wichita</item>
-        <item> CAL - Calhoun Hall</item>
-        <item> CBA - College of Business Administration</item>
-        <item> CCJ - John B. Connally Center for Justice</item>
-        <item> CDA - Comal Child Development Ctr Annex</item>
-        <item> CDL - Collections Deposit Library</item>
-        <item> CEE - Continuing Engineering Education</item>
-        <item> CLA - Liberal Arts Building</item>
-        <item> CMA - Jesse H. Jones Comm. Ctr. (Bldg. A)</item>
-        <item> CMB - Jesse H. Jones Comm. Ctr. (Bldg. B)</item>
-        <item> CML - Comal St. Child Development Center</item>
-        <item> COM - Computation Center</item>
-        <item> CPE - Chemical and Petroleum Engineering</item>
-        <item> CRB - Computational Resource Building</item>
-        <item> CRD - Carothers Dormitory</item>
-        <item> CRH - Creekside Residence Hall</item>
-        <item> DCP - Denton A. Cooley Pavilion</item>
-        <item> DEV - Development Office Building</item>
-        <item> DFA - E. William Doty Fine Arts Building</item>
-        <item> DFF - UFCU Disch-Falk Field</item>
-        <item> DPI - Dell Pediatric Research Institute</item>
-        <item> EAS - Edgar A. Smith Building</item>
-        <item> ECJ - Ernest Cockrell Jr. Hall</item>
-        <item> EPS - E.P. Schoch Building</item>
-        <item> ERC - Frank C Erwin Special Events Center</item>
-        <item> ESS - Engineering Student Services Bldg</item>
-        <item> ETC - Engineering Teaching Center II</item>
-        <item> FAC - Peter T. Flawn Academic Center</item>
-        <item> FDH - J. Frank Dobie House</item>
-        <item> FNT - Larry R. Faulkner Nanosci. and Tech</item>
-        <item> GAR - Garrison Hall</item>
-        <item> GDC - Gates Dell Complex</item>
-        <item> GEA - Mary E. Gearing Hall</item>
-        <item> GEB - Dorothy L. Gebauer Building</item>
-        <item> GOL - Goldsmith Hall</item>
-        <item> GRE - Gregory Gymnasium</item>
-        <item> GSB - Graduate School of Business Bldg.</item>
-        <item> GWB - Gordon-White Building</item>
-        <item> HLB - Health Learning Building</item>
-        <item> HLP - Hartland Plaza-School of Social Wrk</item>
-        <item> HMA - Hogg Memorial Auditorium</item>
-        <item> HRC - Harry Ransom Center</item>
-        <item> HRH - Rainey Hall</item>
-        <item> HSM - William Randolph Hearst Bldg</item>
-        <item> IPF - Indoor Practice Facility</item>
-        <item> JCD - Jester Dormitory</item>
-        <item> JES - Beauford H. Jester Center</item>
-        <item> JGB - Jackson Geological Sciences Bldg.</item>
-        <item> JHH - John W. Hargis Hall</item>
-        <item> JON - Jesse H. Jones Hall</item>
-        <item> KIN - Kinsolving Dormitory</item>
-        <item> LAC - Lake Austin Centre</item>
-        <item> LBJ - Lyndon B Johnson Library1971LBJ</item>
-        <item> LCD - Lavaca St. Child Development Center</item>
-        <item> LCH - Littlefield Carriage House</item>
-        <item> LDH - Longhorn Dining Facility</item>
-        <item> LFH - Littlefield Home</item>
-        <item> LTD - Littlefield Dormitory</item>
-        <item> LTH - Laboratory Theater Bldg.</item>
-        <item> MAI - Main Building</item>
-        <item> MBB - Moffett Molecular Biology Bldg.</item>
-        <item> MEZ - Mezes Hall</item>
-        <item> MFH - Richard Mithoff Trk/Scr Fieldhouse</item>
-        <item> MHD - Moore-Hill Dormitory</item>
-        <item> MMS - Mike A. Myers Track \u0026 Soccer Stadium</item>
-        <item> MNC - Moncrief-Neuhaus Athletic Center</item>
-        <item> MRH - Music Building \u0026 Recital Hall</item>
-        <item> NEZ - North End Zone Building</item>
-        <item> NHB - Norman Hackerman Building</item>
-        <item> NMS - Neural and Molecular Science Bldg.</item>
-        <item> NOA - North Office Building A</item>
-        <item> NUR - Nursing School</item>
-        <item> PAC - Performing Arts Center</item>
-        <item> PAI - T.S. Painter Hall</item>
-        <item> PAR - Parlin Hall</item>
-        <item> PAT - J.T. Patterson Labs Bldg.</item>
-        <item> PHD - Prather Hall Dormitory</item>
-        <item> PHR - Pharmacy Building</item>
-        <item> POB - Peter O\'Donnell Jr. Building</item>
-        <item> PRH - Dobie Paisano Ranch House</item>
-        <item> QTR - Quarters Building</item>
-        <item> RHD - Roberts Hall Dormitory</item>
-        <item> RLM - Robert Lee Moore Hall</item>
-        <item> ROW - Intercollegiate Rowing Boat House</item>
-        <item> RSC - Recreational Sports Center</item>
-        <item> SAC - Student Activity Center</item>
-        <item> SBS - Red and Charline McCombs Field</item>
-        <item> SEA - Sarah M. \u0026 Charles E. Seay Building</item>
-        <item> SER - Service Building</item>
-        <item> SJH - San Jacinto Residence Hall</item>
-        <item> SOF - Telecomm.Svc.Satellite Ops Facility</item>
-        <item> SRH - Sid Richardson Hall</item>
-        <item> SSB - Student Services Building</item>
-        <item> SSW - School of Social Work Building</item>
-        <item> STD - Darrell K Royal TX Memorial Stadium</item>
-        <item> SUT - Sutton Hall</item>
-        <item> SZB - George I. Sanchez Building</item>
-        <item> TCC - Joe C Thompson Conference Center</item>
-        <item> TCP - Texas Cowboys Pavilion</item>
-        <item> TMM - Texas Memorial Museum</item>
-        <item> TNH - Townes Hall</item>
-        <item> TR1 - University Towers</item>
-        <item> TSC - Lee \u0026 Joe Jamail Texas Swimming Ctr</item>
-        <item> UIL - Univ. Interscholastic League Bldg.</item>
-        <item> UNB - Union Building</item>
-        <item> UTC - University Teaching Center</item>
-        <item> UTX - Etter-Harbin Alumni Center</item>
-        <item> VRX - KVRX Transmitter Twr \u0026 Cntrl Bldg</item>
-        <item> WAG - Waggener Hall</item>
-        <item> WAT - Arthur P. Watson House</item>
-        <item> WCH - Will C. Hogg Bldg.</item>
-        <item> WEL - Robert A. Welch Hall</item>
-        <item> WIN - F.L. Winship Drama Bldg.</item>
-        <item> WMB - West Mall Office Bldg.</item>
-        <item> WRW - W.R. Woolrich Labs.</item>
-        <item> WWH - Walter Webb Hall</item>
+        <item>ADH - Almetris Duren Residence Hall</item>
+        <item>AHG - Anna Hiss Gymnasium</item>
+        <item>ANB - Arno Nowotny Building</item>
+        <item>AND - Andrews Dormitory</item>
+        <item>ARC - Animal Resources Center</item>
+        <item>ART - Art Building and Museum</item>
+        <item>ATT - AT\u0026T Executive Educ \u0026 Conf Center</item>
+        <item>BAT - Batts Hall</item>
+        <item>BEL - L. Theo Bellmont Hall</item>
+        <item>BEN - Benedict Hall</item>
+        <item>BGH - Biological Sciences Greenhouses</item>
+        <item>BHD - Brackenridge Hall Dorm</item>
+        <item>BIO - Biological Laboratories</item>
+        <item>BLD - Blanton Dormitory</item>
+        <item>BMA - Jack S. Blanton Museum of Art</item>
+        <item>BMC - Belo Center for New Media</item>
+        <item>BME - Biomedical Engineering Building</item>
+        <item>BOT - Biological Greenhouse</item>
+        <item>BRB - Bernard and Audre Rapoport Center</item>
+        <item>BTL - Battle Hall</item>
+        <item>BUR - Burdine Hall</item>
+        <item>CAL - Calhoun Hall</item>
+        <item>CBA - College of Business Administration</item>
+        <item>CCJ - John B. Connally Center for Justice</item>
+        <item>CEE - Continuing Engineering Education</item>
+        <item>CLA - Liberal Arts Building</item>
+        <item>CMA - Jesse H. Jones Comm. Ctr. (Bldg. A)</item>
+        <item>CMB - Jesse H. Jones Comm. Ctr. (Bldg. B)</item>
+        <item>COM - Computation Center</item>
+        <item>CPE - Chemical and Petroleum Engineering</item>
+        <item>CRB - Computational Resource Building</item>
+        <item>CRD - Carothers Dormitory</item>
+        <item>CRH - Creekside Residence Hall</item>
+        <item>DCP - Denton A. Cooley Pavilion</item>
+        <item>DFA - E. William Doty Fine Arts Building</item>
+        <item>DFF - UFCU Disch-Falk Field</item>
+        <item>EAS - Edgar A. Smith Building</item>
+        <item>ECJ - Ernest Cockrell Jr. Hall</item>
+        <item>EPS - E.P. Schoch Building</item>
+        <item>ERC - Frank C Erwin Special Events Center</item>
+        <item>ETC - Engineering Teaching Center II</item>
+        <item>FAC - Peter T. Flawn Academic Center</item>
+        <item>FDH - J. Frank Dobie House</item>
+        <item>FNT - Larry R. Faulkner Nanosci. and Tech</item>
+        <item>GAR - Garrison Hall</item>
+        <item>GDC - Gates Dell Complex</item>
+        <item>GEA - Mary E. Gearing Hall</item>
+        <item>GEB - Dorothy L. Gebauer Building</item>
+        <item>GOL - Goldsmith Hall</item>
+        <item>GRE - Gregory Gymnasium</item>
+        <item>GWB - Gordon-White Building</item>
+        <item>HMA - Hogg Memorial Auditorium</item>
+        <item>HRC - Harry Ransom Center</item>
+        <item>IPF - Indoor Practice Facility</item>
+        <item>JCD - Jester Dormitory</item>
+        <item>JES - Beauford H. Jester Center</item>
+        <item>JGB - Jackson Geological Sciences Bldg.</item>
+        <item>JHH - John W. Hargis Hall</item>
+        <item>KIN - Kinsolving Dormitory</item>
+        <item>LBJ - Lyndon B Johnson Library</item>
+        <item>LCD - Lavaca St. Child Development Center</item>
+        <item>LCH - Littlefield Carriage House</item>
+        <item>LFH - Littlefield Home</item>
+        <item>LTD - Littlefield Dormitory</item>
+        <item>LTH - Laboratory Theater Bldg.</item>
+        <item>MAI - Main Building</item>
+        <item>MBB - Moffett Molecular Biology Bldg.</item>
+        <item>MEZ - Mezes Hall</item>
+        <item>MHD - Moore-Hill Dormitory</item>
+        <item>MMS - Mike A. Myers Track \u0026 Soccer Stadium</item>
+        <item>MNC - Moncrief-Neuhaus Athletic Center</item>
+        <item>MRH - Music Building \u0026 Recital Hall</item>
+        <item>NEZ - North End Zone Building</item>
+        <item>NHB - Norman Hackerman Building</item>
+        <item>NMS - Neural and Molecular Science Bldg.</item>
+        <item>NOA - North Office Building A</item>
+        <item>NUR - Nursing School</item>
+        <item>PAI - T.S. Painter Hall</item>
+        <item>PAR - Parlin Hall</item>
+        <item>PAT - J.T. Patterson Labs Bldg.</item>
+        <item>PHD - Prather Hall Dormitory</item>
+        <item>PHR - Pharmacy Building</item>
+        <item>POB - Peter O\'Donnell Jr. Building</item>
+        <item>RHD - Roberts Hall Dormitory</item>
+        <item>RLM - Robert Lee Moore Hall</item>
+        <item>RSC - Recreational Sports Center</item>
+        <item>SAC - Student Activity Center</item>
+        <item>SBS - Red and Charline McCombs Field</item>
+        <item>SEA - Sarah M. \u0026 Charles E. Seay Building</item>
+        <item>SER - Service Building</item>
+        <item>SJH - San Jacinto Residence Hall</item>
+        <item>SRH - Sid Richardson Hall</item>
+        <item>SSB - Student Services Building</item>
+        <item>SSW - School of Social Work Building</item>
+        <item>STD - Darrell K Royal TX Memorial Stadium</item>
+        <item>SUT - Sutton Hall</item>
+        <item>SZB - George I. Sanchez Building</item>
+        <item>TCC - Joe C Thompson Conference Center</item>
+        <item>TCP - Texas Cowboys Pavilion</item>
+        <item>TMM - Texas Memorial Museum</item>
+        <item>TNH - Townes Hall</item>
+        <item>TSC - Lee \u0026 Joe Jamail Texas Swimming Ctr</item>
+        <item>UIL - Univ. Interscholastic League Bldg.</item>
+        <item>UNB - Union Building</item>
+        <item>UTC - University Teaching Center</item>
+        <item>UTX - Etter-Harbin Alumni Center</item>
+        <item>WAG - Waggener Hall</item>
+        <item>WCH - Will C. Hogg Bldg.</item>
+        <item>WEL - Robert A. Welch Hall</item>
+        <item>WIN - F.L. Winship Drama Bldg.</item>
+        <item>WRW - W.R. Woolrich Labs.</item>
+        <item>WWH - Walter Webb Hall</item>
     </string-array>
 </resources>

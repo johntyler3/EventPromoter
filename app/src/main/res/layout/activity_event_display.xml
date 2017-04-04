@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Name of Event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:id="@+id/display_NameOfEvent"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="50dp" />
+    <EditText
+        android:inputType="none"
+        android:clickable="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/display_NameOfEvent"
+        android:id="@+id/display_eventNameEdit"
+        android:hint="Name of Event"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:maxLines="1"
+        />
+    <TextView
+        android:text="Name of Organization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:id="@+id/display_nameOrg"
+        android:layout_below="@+id/display_eventNameEdit"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp" />
+    <EditText
+        android:inputType="none"
+        android:clickable="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/display_nameOrg"
+        android:id="@+id/display_nameOrgEdit"
+        android:hint="Name of Organization"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:maxLines="1"
+        />
+    <!--Eventually change location from just a string to a drop down of the different buildings on campus with GPS coordinates tied to them-->
+    <TextView
+        android:text="Location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:id="@+id/display_location"
+        android:layout_below="@+id/display_nameOrgEdit"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp" />
+
+    <AutoCompleteTextView
+        android:inputType="none"
+        android:clickable="false"
+        android:layout_width="250dp"
+        android:layout_height="40sp"
+        android:layout_below="@+id/display_location"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:hint="Building"
+        android:id="@+id/display_locationEdit"
+        />
+
+    <EditText
+        android:inputType="none"
+        android:clickable="false"
+        android:layout_width="130dp"
+        android:layout_height="40sp"
+        android:layout_below="@+id/display_location"
+        android:layout_toRightOf="@+id/display_locationEdit"
+        android:id="@+id/display_roomEdit"
+        android:hint="Room"
+        android:maxLines="1"/>
+
+    <TextView
+        android:text="Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:id="@+id/display_time"
+        android:layout_below="@+id/display_locationEdit"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp" />
+    <EditText
+        android:inputType="none"
+        android:clickable="false"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/display_time"
+        android:id="@+id/display_timeEdit"
+        android:hint="HH:MM"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:focusable="false"
+        />
+    <TextView
+        android:text="Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/display_time"
+        android:layout_alignLeft="@+id/display_dateEdit"
+        android:gravity="left"
+        android:id="@+id/display_date"
+        android:layout_below="@+id/display_locationEdit"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp" />
+    <EditText
+        android:inputType="none"
+        android:clickable="false"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/display_time"
+        android:layout_toRightOf="@+id/display_timeEdit"
+        android:id="@+id/display_dateEdit"
+        android:hint="MM/DD/YYYY"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:focusable="false"
+        />
+    <TextView
+        android:text="Food Provided"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:id="@+id/display_foodProvided"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:layout_below="@+id/display_timeEdit"/>
+    <EditText
+        android:inputType="none"
+        android:clickable="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/display_foodProvided"
+        android:id="@+id/display_foodProvidedEdit"
+        android:hint="Food Provided (Optional)"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:maxLines="1"
+        />
+
+    <TextView
+        android:text="Extra Details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:id="@+id/display_extraDetails"
+        android:layout_below="@+id/display_foodProvidedEdit"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp" />
+
+    <EditText
+        android:inputType="none"
+        android:clickable="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/display_extraDetails"
+        android:id="@+id/display_extraDetailsEdit"
+        android:hint="Extra Details (Optional)"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:maxLines="1"
+        />
+
+
+
+
+</RelativeLayout>
