@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     final static String TAG = "MainEvent";
     protected HashMap<String, Event> mEventMap;
 
-    protected HashSet<Event> mEventList;
+    protected HashSet<Event> mEventSet;
 
     private void eventListener(){
         eventRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                     Event event = child.getValue(Event.class);
                     Log.d(TAG, event.toString());
                     mEventMap.put(event.getEventID(), event);
-                    mEventList.add(event);
+                    mEventSet.add(event);
                 }
             }
 
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mEventMap = new HashMap<>();
-        mEventList = new HashSet<>();
+        mEventSet = new HashSet<>();
         // Grab all the data that is saved on Firebase and add it to a hashmap, each time that the main activity starts up
         eventListener();
 
@@ -70,12 +70,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void browseEvents(View view){
         // Not final of course, just seeing how the events list looks right now
-        Intent intent = new Intent(this, EventsList.class);
+        Intent intent = new Intent(this, EventsList.class).putExtra("EventSet", mEventSet).putExtra("EventMap", mEventMap);
         startActivity(intent);
     }
 
     public void viewMap(View view){
-        Intent intent = new Intent(this, MapsActivity.class).putExtra("EventSet", mEventList).putExtra("EventMap", mEventMap);
+        Intent intent = new Intent(this, MapsActivity.class).putExtra("EventSet", mEventSet).putExtra("EventMap", mEventMap);
         startActivity(intent);
     }
 
