@@ -28,6 +28,7 @@ public class EventsList extends AppCompatActivity {
 
     private ListView mView;
     private List<String> events;
+    private ArrayList asdf;
     private ArrayAdapter<String> adapter;
 
     @Override
@@ -57,6 +58,7 @@ public class EventsList extends AppCompatActivity {
                 // do stuff
             case R.id.sort_by_location:
                 // do other stuff
+//                adapter.notifyDataSetChanged();
                 if (item.isChecked()) item.setChecked(false);
                 else item.setChecked(true);
                 return true;
@@ -72,6 +74,7 @@ public class EventsList extends AppCompatActivity {
         String[] rawData = new String[] {"Example 1", "Example 2", "Example 3", "Example 4", "Example 5", "Example 6", "Example 7", "Example 8"};
 
         events = new ArrayList<>(Arrays.asList(rawData));
+        asdf = new ArrayList<>(mEventSet);
     }
 
     private void setAdapter() {
@@ -94,7 +97,8 @@ public class EventsList extends AppCompatActivity {
 
                 Log.d(TAG, "Selected view: " + v);
 
-                String event = events.get(position);
+                Event event = (Event) asdf.get(position);
+//                Event event = events.get(position);
 
                 // example if creating and showing a Toast. Cheers!
 //                String toastString = "position: " + position +
@@ -105,10 +109,16 @@ public class EventsList extends AppCompatActivity {
 //                        Toast.LENGTH_SHORT).show();
 
 //                // call method to respond to click
-//                adapter.notifyDataSetChanged();
+                InfoBoxDialogFragment fragment = InfoBoxDialogFragment.newInstance(event.getEventID());
+                fragment.show(getFragmentManager(), "info box");
 
             }
         });
+    }
+
+    public void goToEventPage(String eventID) {
+        Intent intent = new Intent(this, EventDisplayActivity.class).putExtra("Event", (Event) mEventMap.get(eventID));
+        startActivity(intent);
     }
 
     public void goToMap(View view) {

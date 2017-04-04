@@ -7,6 +7,9 @@
     <string name="sort_list">Sort by:</string>
     <string name="sort_by_name">Name</string>
     <string name="sort_by_location">Location</string>
+    <string name="event_page_question">Go to event page?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
     <string-array name="buildings">
         <item>ADH - Almetris Duren Residence Hall</item>
