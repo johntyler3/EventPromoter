@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected HashSet<Event> mEventSet;
 
+    // TODO: 4/4/2017 Have event Listener only listen for new events on resume
     private void eventListener(){
         eventRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

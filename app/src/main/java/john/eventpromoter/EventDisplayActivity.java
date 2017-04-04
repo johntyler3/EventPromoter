@@ -67,5 +67,7 @@ public class EventDisplayActivity extends Activity {
         editText = (EditText) findViewById(R.id.display_extraDetailsEdit);
         editText.setText(event.getExtraDetails());
         editText.setKeyListener(null);
+
+        // TODO: 4/4/2017 Maybe have a button that shows the single event on the map; maybe for beta release 
     }
 }
