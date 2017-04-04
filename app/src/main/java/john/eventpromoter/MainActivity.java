@@ -15,6 +15,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     final static String TAG = "MainEvent";
     protected HashMap<String, Event> mEventMap;
 
-    protected ArrayList<Event> mEventList;
+    protected HashSet<Event> mEventList;
 
     private void eventListener(){
         eventRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mEventMap = new HashMap<>();
-        mEventList = new ArrayList<>();
+        mEventList = new HashSet<>();
         // Grab all the data that is saved on Firebase and add it to a hashmap, each time that the main activity starts up
         eventListener();
 
@@ -75,8 +76,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void randomEvent(View view){
-        Intent intent = new Intent(this, EventDisplayActivity.class).putExtra("Event", mEventList.get(0));
+    public void viewMap(View view){
+        Intent intent = new Intent(this, MapsActivity.class).putExtra("EventSet", mEventList);
         startActivity(intent);
     }
+
 }

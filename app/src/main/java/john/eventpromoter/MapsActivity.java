@@ -10,9 +10,13 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.HashSet;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+
+    private HashSet<Event> mEventSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        mEventSet = (HashSet) getIntent().getSerializableExtra("EventSet");
     }
 
 
@@ -39,8 +44,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+//        LatLng sydney = new LatLng(-34, 151);
+        for (Event e : mEventSet) {
+            // TODO: 4/3/17 make sure events don't stack on eachother 
+            BuildingCodeLocationEnum building = BuildingCodeLocationEnum.valueOf(e.getBuildingCode().substring(0,3));
+            double[] gps = building.getGPS();
+            mMap.addMarker(new MarkerOptions().position(new LatLng(gps[0],gps[1])).title(e.getEventName()));
+        }
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(30.286103, -97.739362)));
+        mMap.animateCamera( CameraUpdateFactory.zoomTo( 3.0f ) );
+
     }
 }

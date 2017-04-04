@@ -74,8 +74,8 @@ public class EventSubmission extends Activity {
         int day = sharedPreferences.getInt("day",-1);
         editText = (EditText)findViewById(R.id.locationEdit);
         mBuildingName = editText.getText().toString();
-        //Show only the three digit code associated with each building even though they choose from the full name
-        mBuildingName = (String) mBuildingName.subSequence(0,mBuildingName.indexOf("-"));
+        //Show only the three digit code associated with each building even though they choose from the full name, useful for enums
+        mBuildingName = (String) mBuildingName.subSequence(0,mBuildingName.indexOf("-")-1);
         editText = (EditText)findViewById(R.id.roomEdit);
         mRoomNumber = editText.getText().toString();
         if (mEventName.isEmpty() || mOrgName.isEmpty() || mhour == -1 || year == -1 || mBuildingName.isEmpty() || mRoomNumber.isEmpty()){
