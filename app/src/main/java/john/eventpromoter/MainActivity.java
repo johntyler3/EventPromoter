@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewMap(View view){
-        Intent intent = new Intent(this, MapsActivity.class).putExtra("EventSet", mEventList);
+        Intent intent = new Intent(this, MapsActivity.class).putExtra("EventSet", mEventList).putExtra("EventMap", mEventMap);
         startActivity(intent);
     }
 
