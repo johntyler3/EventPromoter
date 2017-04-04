@@ -4,6 +4,24 @@
     <string name="browse_events">Browse Events</string>
     <string name="post_event">Post Event</string>
     <string name="go_to_map">Go to Map View</string>
+    <string name="nameOfEvent">Name of Event</string>
+    <string name="nameOfOrg">Name of Organization</string>
+    <string name="location">Location</string>
+    <string name="building">Building</string>
+    <string name="room">Room</string>
+    <string name="time">Time</string>
+    <string name="timeHint">HH:MM</string>
+    <string name="date">Date</string>
+    <string name="dateEdit">MM/DD/YYYY</string>
+    <string name="food">Food Provided</string>
+    <string name="foodHint">Food Provided (Optional)</string>
+    <string name="details">Extra Details</string>
+    <string name="detailsHint">Extra Details (Optional)</string>
+
+
+
+
+
 
     <string-array name="buildings">
         <item>ADH - Almetris Duren Residence Hall</item>

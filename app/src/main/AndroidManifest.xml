@@ -41,7 +41,7 @@
         </activity>
 
         <activity
-            android:name=".EventSubmission">
+            android:name=".EventSubmissionActivity">
         </activity>
 
         <activity

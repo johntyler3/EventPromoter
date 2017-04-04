@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by Nathan Seegmiller on 4/1/2017.
  */
-public class EventSubmission extends Activity {
+public class EventSubmissionActivity extends Activity {
 
     //    private SharedPreferences sharedPreferences;
     private static final String PREF_NAME = "EventPrefs";
@@ -31,7 +31,7 @@ public class EventSubmission extends Activity {
 
     private ArrayAdapter<String> buildingNames;
 
-    private static final String TAG = "EventSubmission";
+    private static final String TAG = "EventSubmissionActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +59,7 @@ public class EventSubmission extends Activity {
 
     public void postEvent(View view){
 
+        Log.d(TAG, "Is the first line being logged, or is it just shitting the bed");
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
 
@@ -75,7 +76,9 @@ public class EventSubmission extends Activity {
         editText = (EditText)findViewById(R.id.locationEdit);
         mBuildingName = editText.getText().toString();
         //Show only the three digit code associated with each building even though they choose from the full name, useful for enums
-        mBuildingName = (String) mBuildingName.subSequence(0,mBuildingName.indexOf("-")-1);
+        if (!mBuildingName.isEmpty()){
+            mBuildingName = (String) mBuildingName.subSequence(0,mBuildingName.indexOf("-")-1);
+        }
         editText = (EditText)findViewById(R.id.roomEdit);
         mRoomNumber = editText.getText().toString();
         if (mEventName.isEmpty() || mOrgName.isEmpty() || mhour == -1 || year == -1 || mBuildingName.isEmpty() || mRoomNumber.isEmpty()){

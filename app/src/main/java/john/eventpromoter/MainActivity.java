@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -13,7 +12,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -66,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     // TODO: 4/2/17 Low Priority: Add in a settings method and activity
 
     public void eventSubmission(View view){
-        Intent intent = new Intent(this, EventSubmission.class);
+        Intent intent = new Intent(this, EventSubmissionActivity.class);
         startActivity(intent);
     }
 
