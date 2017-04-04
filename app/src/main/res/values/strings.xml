@@ -4,6 +4,7 @@
     <string name="browse_events">Browse Events</string>
     <string name="post_event">Post Event</string>
     <string name="go_to_map">Go to Map View</string>
+    <string name="sort_list">Sort by:</string>
 
     <string-array name="buildings">
         <item>ADH - Almetris Duren Residence Hall</item>
