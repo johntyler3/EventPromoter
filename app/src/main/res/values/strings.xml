@@ -23,6 +23,17 @@
     <string name="event_page_question">Go to event page?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="info">Info</string>
+    <string name="app_description">This App is designed to connect student organizations and students around Campus.
+        To do this, students and student organizations can post about upcoming events on Campus, by clicking on the Post Event Button.
+        On that page, users will fill out the name of the event, what organization is sponsoring the event, the building and room it will be in, and the time and date.\n\n
+        Students can browse what events have been posted, by going to either browse events, or view map. By clicking Browse Events, users will be presented with a list of events, displaying some basic information.
+        By clicking on an item in the list, it will bring up a screen with all the information related to that event. \n\n
+        Users can also click on the show map button to browse the events. The map view will have markers placed on all the buildings that have events going on.
+        Users can click on a marker, which will bring up some basic information regarding the event. For more information users can click on the information that is shown on marker click.
+    </string>
+    <string name="close">close</string>
+
 
 
     <string-array name="buildings">
