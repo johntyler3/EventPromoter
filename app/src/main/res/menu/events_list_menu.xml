@@ -4,6 +4,17 @@
 
     <item android:id="@+id/menu_sort"
         android:title="@string/sort_list"
-        eventpromoter:showAsAction="ifRoom" />
-
+        eventpromoter:showAsAction="always">
+        <!-- submenu -->
+        <menu>
+            <!-- group -->
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/sort_by_name"
+                    android:title="@string/sort_by_name"
+                    android:checked="true" />
+                <item android:id="@+id/sort_by_location"
+                    android:title="@string/sort_by_location" />
+            </group>
+        </menu>
+    </item>
 </menu>

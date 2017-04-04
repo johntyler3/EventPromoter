@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,8 +23,8 @@ public class EventsList extends AppCompatActivity {
 
     private static final String TAG = "EventsList";
 
-    private HashSet<Event> mEventSet;
-    private HashMap<String, Event> mEventMap;
+    private HashSet mEventSet;
+    private HashMap mEventMap;
 
     private ListView mView;
     private List<String> events;
@@ -49,11 +50,26 @@ public class EventsList extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.sort_by_name:
+                // do stuff
+            case R.id.sort_by_location:
+                // do other stuff
+                if (item.isChecked()) item.setChecked(false);
+                else item.setChecked(true);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     private void createModel() {
 //        String[] rawData
 //                = getResources().getStringArray(R.array.events);
         // In the future, want to draw data from Firebase/AWS
-        String[] rawData = new String[] {"Example 1", "Example 2", "Example 3"};
+        String[] rawData = new String[] {"Example 1", "Example 2", "Example 3", "Example 4", "Example 5", "Example 6", "Example 7", "Example 8"};
 
         events = new ArrayList<>(Arrays.asList(rawData));
     }
