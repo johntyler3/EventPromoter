@@ -141,6 +141,24 @@ public class Event implements Serializable{
         return roomNumber;
     }
 
+    public String getEventTime(){
+        String minuteString = String.valueOf(minute);
+        String AM_PM = "AM";
+        if(minute < 10){
+            minuteString = "0" + minute;
+        }
+        if (hour >= 12){
+            if (hour > 12){
+                hour = hour - 12;
+            }
+            AM_PM = "PM";
+        }
+        if (hour == 0){
+            hour = 12;
+        }
+        return hour + ": " + minuteString + " " + AM_PM;
+    }
+
     @Override
     public String toString() {
         return "Event{" +
