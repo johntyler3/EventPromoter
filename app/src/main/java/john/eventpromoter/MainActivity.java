@@ -73,17 +73,20 @@ public class MainActivity extends AppCompatActivity {
     // TODO: 4/2/17 High Priority: Add method to kick off searching events
     // TODO: 4/2/17 Low Priority: Add in a settings method and activity
 
+    //button to submit an event
     public void eventSubmission(View view){
         Intent intent = new Intent(this, EventSubmissionActivity.class);
         startActivity(intent);
     }
 
+    //button to browse events
     public void browseEvents(View view){
         // Not final of course, just seeing how the events list looks right now
         Intent intent = new Intent(this, EventsList.class).putExtra("EventSet", mEventSet).putExtra("EventMap", mEventMap);
         startActivity(intent);
     }
 
+    //button to select map
     public void viewMap(View view){
         Intent intent = new Intent(this, MapsActivity.class).putExtra("EventSet", mEventSet).putExtra("EventMap", mEventMap);
         startActivity(intent);
