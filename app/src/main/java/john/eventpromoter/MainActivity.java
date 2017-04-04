@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void searchEvents(View view){
+    public void browseEvents(View view){
         // Not final of course, just seeing how the events list looks right now
         Intent intent = new Intent(this, EventsList.class);
         startActivity(intent);

@@ -18,7 +18,7 @@
         android:id="@+id/search"
         android:layout_below="@+id/post"
         android:layout_centerHorizontal="true"
-        android:onClick="searchEvents"/>
+        android:onClick="browseEvents"/>
 
     <Button
         android:text="@string/post_event"
