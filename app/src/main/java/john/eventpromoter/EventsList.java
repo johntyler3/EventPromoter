@@ -1,6 +1,7 @@
 package john.eventpromoter;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,15 +17,16 @@ public class EventsList extends ListActivity {
 
     private static final String TAG = "EventsList";
 
-    private ListView view;
+    private ListView mView;
     private List<String> events;
     private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.events_list);
         createModel();
-        view = getListView();
+        mView = getListView();
         setAdapter();
         createOnItemClickListener();
     }
@@ -50,7 +52,7 @@ public class EventsList extends ListActivity {
     }
 
     private void createOnItemClickListener() {
-        view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent,
                                     View v, int position, long id) {
@@ -74,4 +76,8 @@ public class EventsList extends ListActivity {
         });
     }
 
+    public void goToMap(View view) {
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
 }
