@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener {
 
     private static final String TAG = "MapActivity";
 
@@ -80,5 +81,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Log.d(TAG, "Event Name: " + event.getEventName());
         Intent intent = new Intent(this, EventDisplayActivity.class).putExtra("Event", event);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        Event event = mEventMap.get(marker.getTag().toString());
+        TextView textView = (TextView)findViewById(R.id.info_eventName);
+        textView.setText(event.getEventName());
+        textView = (TextView)findViewById(R.id.info_eventTime);
+        textView.setText(event.getEventTime());
+        textView = (TextView)findViewById(R.id.info_eventLocation);
+        textView.setText("Location: " + event.getBuildingCode() + " " + event.getRoomNumber());
+        return false;
     }
 }
