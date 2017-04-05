@@ -52,14 +52,16 @@ public class EventsList extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // Right now is made to handle ONLY sorting options in the menu
+        if (item.isChecked()) item.setChecked(false);
+        else item.setChecked(true);
+
         switch (item.getItemId()) {
             case R.id.sort_by_name:
                 // do stuff
             case R.id.sort_by_location:
                 // do other stuff
-//                adapter.notifyDataSetChanged();
-                if (item.isChecked()) item.setChecked(false);
-                else item.setChecked(true);
+                ((ArrayAdapter<Event>) mView.getAdapter()).notifyDataSetChanged();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -75,7 +77,6 @@ public class EventsList extends AppCompatActivity {
                 Log.d(TAG, "Selected view: " + v);
 
                 Event event = (Event) eventList.get(position);
-//                Event event = events.get(position);
 
                 // example if creating and showing a Toast. Cheers!
 //                String toastString = "position: " + position +
@@ -85,7 +86,7 @@ public class EventsList extends AppCompatActivity {
 //                        toastString,
 //                        Toast.LENGTH_SHORT).show();
 
-//                // call method to respond to click
+                // call method to respond to click
                 InfoBoxDialogFragment fragment = InfoBoxDialogFragment.newInstance(event.getEventID());
                 fragment.show(getFragmentManager(), "info box");
 
