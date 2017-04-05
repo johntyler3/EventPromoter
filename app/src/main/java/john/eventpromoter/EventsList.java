@@ -14,8 +14,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -58,14 +61,23 @@ public class EventsList extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.sort_by_name:
-                // do stuff
+                sortList(NameComparator, "name");
+                return true;
             case R.id.sort_by_location:
-                // do other stuff
-                ((ArrayAdapter<Event>) mView.getAdapter()).notifyDataSetChanged();
+                sortList(LocationComparator, "location");
+                return true;
+            case R.id.sort_by_date_time:
+                sortList(DateTimeComparator, "date and time");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    void sortList(Comparator<Event> comparator, String criteria) {
+        Collections.sort(eventList, comparator);
+        Toast.makeText(EventsList.this, "Sorting by event " + criteria, Toast.LENGTH_LONG).show();
+        ((ArrayAdapter<Event>) mView.getAdapter()).notifyDataSetChanged();
     }
 
     private void createOnItemClickListener() {
@@ -144,4 +156,74 @@ public class EventsList extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    /***
+     * Custom Comparators for sorting the list
+     */
+
+    public static Comparator<Event> NameComparator = new Comparator<Event>() {
+        @Override
+        public int compare(Event e1, Event e2) {
+            String name1 = e1.getEventName();
+            String name2 = e2.getEventName();
+
+            return name1.compareToIgnoreCase(name2);
+        }
+    };
+
+    public static Comparator<Event> LocationComparator = new Comparator<Event>() {
+        @Override
+        public int compare(Event e1, Event e2) {
+            String loc1 = e1.getBuildingCode();
+            String loc2 = e2.getBuildingCode();
+
+            if (loc1.equals(loc2)) {
+                String room1 = e1.getRoomNumber();
+                String room2 = e2.getRoomNumber();
+
+                return room1.compareToIgnoreCase(room2);
+            }
+
+            return loc1.compareToIgnoreCase(loc2);
+        }
+    };
+
+    // TODO: Make this implementation less massively sucky, maybe by using Date class or something
+    public static Comparator<Event> DateTimeComparator = new Comparator<Event>() {
+        @Override
+        public int compare(Event e1, Event e2) {
+            int year1 = e1.getYear();
+            int year2 = e2.getYear();
+
+            if (year1 == year2) {
+                int month1 = e1.getMonth();
+                int month2 = e2.getMonth();
+
+                if (month1 == month2) {
+                    int day1 = e1.getDay();
+                    int day2 = e2.getDay();
+
+                    if (day1 == day2) {
+                        int hour1 = e1.getHour();
+                        int hour2 = e2.getHour();
+
+                        if (hour1 == hour2) {
+                            int min1 = e1.getMinute();
+                            int min2 = e2.getMinute();
+
+                            return min1 - min2;
+                        }
+
+                        return hour1 - hour2;
+                    }
+
+                    return day1 - day2;
+                }
+
+                return month1 - month2;
+            }
+
+            return year1 - year2;
+        }
+    };
 }
