@@ -43,6 +43,7 @@ public class EventsList extends AppCompatActivity {
         mView = (ListView) findViewById(android.R.id.list);
         Log.d(TAG, "number of events = " + eventList.size());
         mView.setAdapter(new EventAdapter(eventList));
+        sortList(TimeDateComparator, "time and date");
         createOnItemClickListener();
     }
 
@@ -67,7 +68,7 @@ public class EventsList extends AppCompatActivity {
                 sortList(LocationComparator, "location");
                 return true;
             case R.id.sort_by_date_time:
-                sortList(DateTimeComparator, "date and time");
+                sortList(TimeDateComparator, "time and date");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -136,7 +137,7 @@ public class EventsList extends AppCompatActivity {
 
             Event model = getModel(position);
             name.setText(model.getEventName());
-            time.setText(model.getEventTime());
+            time.setText(model.getEventTime() + " " + model.getMonth() + "/" + model.getDay() + "/" + model.getYear());
 
             return row;
         }
@@ -189,7 +190,7 @@ public class EventsList extends AppCompatActivity {
     };
 
     // TODO: Make this implementation less massively sucky, maybe by using Date class or something
-    public static Comparator<Event> DateTimeComparator = new Comparator<Event>() {
+    public static Comparator<Event> TimeDateComparator = new Comparator<Event>() {
         @Override
         public int compare(Event e1, Event e2) {
             int year1 = e1.getYear();
