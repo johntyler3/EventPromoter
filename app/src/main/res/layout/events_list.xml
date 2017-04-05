@@ -19,6 +19,7 @@
                 android:layout_weight="1"
                 android:id="@+id/homeButton"
                 android:onClick="homeButton"
+                android:backgroundTint="@color/lightBlue"
                 android:text="Home"/>
 
             <Button
@@ -27,7 +28,7 @@
                 android:layout_weight="1"
                 android:text="View Map"
                 android:id="@+id/viewMap"
-
+                android:backgroundTint="@color/lightBlue"
                 android:onClick="viewMap"
                 android:visibility="visible"/>
 

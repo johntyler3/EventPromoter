@@ -28,6 +28,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/homeButton"
                 android:onClick="homeButton"
+                android:backgroundTint="@color/lightBlue"
+
                 android:layout_toLeftOf="@id/fakeView"
 
             android:text="Home"/>
@@ -37,6 +39,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/browse_events"
                 android:id="@+id/search"
+                android:backgroundTint="@color/lightBlue"
+
                 android:layout_toRightOf="@id/fakeView"
                 android:onClick="browseEvents"
                 android:visibility="visible"/>
