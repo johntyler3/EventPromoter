@@ -32,7 +32,7 @@
         Users can also click on the show map button to browse the events. The map view will have markers placed on all the buildings that have events going on.
         Users can click on a marker, which will bring up some basic information regarding the event. For more information users can click on the information that is shown on marker click.
     </string>
-    <color name="lightYellow">#ffffb3</color>
+    <color name="lightYellow">#e6e6e6</color>
     <color name="blue">#0000ff</color>
     <color name="lightBlue">#80aaff</color>
 
