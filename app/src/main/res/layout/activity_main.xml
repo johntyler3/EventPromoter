@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:onClick="viewMap"
-        android:text="View Map"
+        android:text="@string/view_map"
         android:layout_below="@+id/search"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

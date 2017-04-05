@@ -33,7 +33,8 @@
         Users can click on a marker, which will bring up some basic information regarding the event. For more information users can click on the information that is shown on marker click.
     </string>
     <string name="close">close</string>
-
+    <string name="view_map">View Map</string>
+    <string name="home">Home</string>
 
 
     <string-array name="buildings">

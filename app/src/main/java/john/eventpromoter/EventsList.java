@@ -1,6 +1,5 @@
 package john.eventpromoter;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,12 +8,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -27,9 +27,7 @@ public class EventsList extends AppCompatActivity {
     private HashMap mEventMap;
 
     private ListView mView;
-    private List<String> events;
-    private ArrayList asdf;
-    private ArrayAdapter<String> adapter;
+    private ArrayList eventList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +35,10 @@ public class EventsList extends AppCompatActivity {
         setContentView(R.layout.events_list);
         mEventSet = (HashSet) getIntent().getSerializableExtra("EventSet");
         mEventMap = (HashMap) getIntent().getSerializableExtra("EventMap");
-        createModel();
-//        mView = getListView(); // use this if EventsList extends ListActivity
+        eventList = new ArrayList<>(mEventSet);
         mView = (ListView) findViewById(android.R.id.list);
-        setAdapter();
+        Log.d(TAG, "number of events = " + eventList.size());
+        mView.setAdapter(new EventAdapter(eventList));
         createOnItemClickListener();
     }
 
@@ -67,28 +65,6 @@ public class EventsList extends AppCompatActivity {
         }
     }
 
-    private void createModel() {
-//        String[] rawData
-//                = getResources().getStringArray(R.array.events);
-        // In the future, want to draw data from Firebase/AWS
-        String[] rawData = new String[] {"Example 1", "Example 2", "Example 3", "Example 4", "Example 5", "Example 6", "Example 7", "Example 8"};
-
-        events = new ArrayList<>(Arrays.asList(rawData));
-        asdf = new ArrayList<>(mEventSet);
-    }
-
-    private void setAdapter() {
-        // for layout that is simply a TextViews
-        adapter
-                = new ArrayAdapter<>(
-                this,
-                R.layout.list_item, // android.R.layout.simple_list_item_1,
-                events);
-
-//        setListAdapter(adapter); // use this if EventsList extends ListActivity
-        mView.setAdapter(adapter);
-    }
-
     private void createOnItemClickListener() {
         mView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -97,7 +73,7 @@ public class EventsList extends AppCompatActivity {
 
                 Log.d(TAG, "Selected view: " + v);
 
-                Event event = (Event) asdf.get(position);
+                Event event = (Event) eventList.get(position);
 //                Event event = events.get(position);
 
                 // example if creating and showing a Toast. Cheers!
@@ -114,6 +90,30 @@ public class EventsList extends AppCompatActivity {
 
             }
         });
+    }
+
+    private Event getModel(int position) {
+        return ((EventAdapter) mView.getAdapter()).getItem(position);
+    }
+
+    private class EventAdapter extends ArrayAdapter<Event> {
+        EventAdapter(List<Event> list) {
+            super(EventsList.this, R.layout.list_item, R.id.list_item_name, list);
+        }
+
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View row = super.getView(position, convertView, parent);
+            TextView timeView = (TextView) row.getTag();
+            if (timeView == null) {
+                timeView = (TextView) row.findViewById(R.id.list_item_time);
+                row.setTag(timeView);
+            }
+
+            Event model = getModel(position);
+            timeView.setTag(position);
+            timeView.setText(model.getEventTime());
+            return row;
+        }
     }
 
     public void goToEventPage(String eventID) {
