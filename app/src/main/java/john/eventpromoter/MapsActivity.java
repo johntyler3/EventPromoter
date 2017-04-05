@@ -4,11 +4,9 @@ import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
-<<<<<<< HEAD
 import android.view.View;
-=======
+
 import android.widget.TextView;
->>>>>>> 1740a5ec1bafa46126c364dc0ba9fd2e53dab6d7
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -21,6 +19,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Set;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener {
 
@@ -61,14 +60,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         googleMap.setOnInfoWindowClickListener(this);
         mMap = googleMap;
-
+        HashSet<BuildingCodeLocationEnum> buildingsSeen = new HashSet<>();
+        double offset = 0;
         // Add a marker in Sydney and move the camera
 //        LatLng sydney = new LatLng(-34, 151);
         for (Event e : mEventMap.values()) {
             // TODO: 4/3/17 make sure events don't stack on eachother
             BuildingCodeLocationEnum building = BuildingCodeLocationEnum.valueOf(e.getBuildingCode().substring(0,3));
+            if (buildingsSeen.contains(building)){
+                offset = Math.random()/10000;
+            }
+            else{
+                buildingsSeen.add(building);
+            }
             double[] gps = building.getGPS();
-            Marker marker = mMap.addMarker(new MarkerOptions().position(new LatLng(gps[0],gps[1])).title(e.getEventName()));
+            Marker marker = mMap.addMarker(new MarkerOptions().position(new LatLng(gps[0] + offset, gps[1] + offset)).title(e.getEventName()));
             marker.setTag(e.getEventID());
             mEventMarkers.add(marker);
         }
