@@ -37,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
                 for (DataSnapshot child: dataSnapshot.getChildren()) {
                     Event event = child.getValue(Event.class);
                     Log.d(TAG, event.toString());
-                    mEventMap.put(event.getEventID(), event);
-                    mEventSet.add(event);
+                    if (!mEventMap.containsKey(event.getEventID())){
+                        mEventMap.put(event.getEventID(), event);
+                        mEventSet.add(event);
+                    }
                 }
             }
 
