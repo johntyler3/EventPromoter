@@ -38,7 +38,8 @@
 
 
     <string name="close">close</string>
-
+    <string name="view_map">View Map</string>
+    <string name="home">Home</string>
 
 
     <string-array name="buildings">

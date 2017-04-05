@@ -1,0 +1,25 @@
+Team Members:
+Nathan Seegmiller nds652
+Eugene Ng ern334
+JT Thomas jtt767
+List of Features:
+- Adding an event to firebase
+- Downloading list of events from firebase
+- Display List of Events in a list view
+- Display Events on a map, based on the location set in the event creation
+- View full details of the event from the Map or ListView, by clicking on the list element, or map marker info box respectively
+
+
+Classes and Code from Other Sources:
+- TimePickerDialogFragment.java, http://stackoverflow.com/questions/35621429/datetimepicker-android, I used the onCreateDialog from this stackoverflow answer to get my timepicker edittext to work. By extension, I used some similar code for the DatePickerDialogFragment. That was written using what I learned from the TimePickerDialogFragment
+
+- MainActivity, https://firebase.google.com/docs/database/admin/retrieve-data, For downloading events from firebase, I used the Google Documentation as a template.
+
+Classes Completed without outside sources:
+- EventDisplayActivity
+- AppDescriptionDialogFragment
+- Event
+- BuildingCodeLocationEnum
+- DatePickerDialogFragment
+- EventSubmissionActivity
+

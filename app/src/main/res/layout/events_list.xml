@@ -20,13 +20,13 @@
                 android:id="@+id/homeButton"
                 android:onClick="homeButton"
                 android:backgroundTint="@color/lightBlue"
-                android:text="Home"/>
+                android:text="@string/home"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="View Map"
+                android:text="@string/view_map"
                 android:id="@+id/viewMap"
                 android:backgroundTint="@color/lightBlue"
                 android:onClick="viewMap"
@@ -38,10 +38,8 @@
 
     <ListView
         android:id="@android:id/list"
-        android:layout_below="@+id/linear_layout"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true" >
+        android:layout_height="wrap_content">
     </ListView>
 
 
