@@ -13,9 +13,9 @@ List of Features:
 Classes and Code from Other Sources:
 - TimePickerDialogFragment.java, http://stackoverflow.com/questions/35621429/datetimepicker-android, I used the onCreateDialog from this stackoverflow answer to get my timepicker edittext to work. By extension, I used some similar code for the DatePickerDialogFragment. That was written using what I learned from the TimePickerDialogFragment
 
-- MainActivity, https://firebase.google.com/docs/database/admin/retrieve-data, For downloading events from firebase, I used the Google Documentation as a template.
+- MainActivity.java, https://firebase.google.com/docs/database/admin/retrieve-data, For downloading events from firebase, I used the Google Documentation as a template.
 
-- MapsActivity.java https://developers.google.com/maps/documentation/android-api/map-with-marker, Basically used the code from the Google Maps API guide to help set up the google map
+- MapsActivity.java, https://developers.google.com/maps/documentation/android-api/map-with-marker, Basically used the code from the Google Maps API guide to help set up the google map
 
 Classes Completed without outside sources:
 - EventDisplayActivity
@@ -24,4 +24,5 @@ Classes Completed without outside sources:
 - BuildingCodeLocationEnum
 - DatePickerDialogFragment
 - EventSubmissionActivity
-
+- EventsList
+- InfoBoxDialogFragment
