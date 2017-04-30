@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -38,7 +39,7 @@ public class EventSubmissionActivity extends Activity {
         setContentView(R.layout.activity_event_submission);
         List<String> buildings = Arrays.asList(getResources().getStringArray(R.array.buildings));
         buildingNames = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, buildings);
-        AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.locationEdit);
+        Spinner textView = (Spinner) findViewById(R.id.locationEdit);
         textView.setAdapter(buildingNames);
         mFoodProvided = "";
         mExtraDetails = "";
@@ -73,8 +74,9 @@ public class EventSubmissionActivity extends Activity {
         int year = sharedPreferences.getInt("year",-1);
         int month = sharedPreferences.getInt("month",-1);
         int day = sharedPreferences.getInt("day",-1);
-        editText = (EditText)findViewById(R.id.locationEdit);
-        mBuildingName = editText.getText().toString();
+        Spinner spinner = (Spinner) findViewById(R.id.locationEdit);
+//        editText = (EditText)findViewById(R.id.locationEdit);
+        mBuildingName = spinner.getSelectedItem().toString();
         //Show only the three digit code associated with each building even though they choose from the full name, useful for enums
         if (!mBuildingName.isEmpty()){
             mBuildingName = (String) mBuildingName.subSequence(0,mBuildingName.indexOf("-")-1);

@@ -33,6 +33,7 @@ public class DatePickerDialogFragment extends DialogFragment implements DatePick
     }
 
     public void onDateSet(DatePicker view, int year, int month, int day) {
+        month++;
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt("year", year);

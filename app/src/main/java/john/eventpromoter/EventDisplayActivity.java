@@ -26,7 +26,8 @@ public class EventDisplayActivity extends Activity {
         editText.setKeyListener(null);
 
         editText = (EditText) findViewById(R.id.display_locationEdit);
-        editText.setText(event.getBuildingCode());
+        BuildingCodeLocationEnum buildingCode = BuildingCodeLocationEnum.valueOf(event.getBuildingCode());
+        editText.setText(event.getBuildingCode() + " - " + buildingCode.getBuildingName());
         editText.setKeyListener(null);
 
         editText = (EditText) findViewById(R.id.display_roomEdit);

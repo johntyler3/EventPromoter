@@ -98,11 +98,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Not final of course, just seeing how the events list looks right now
         Intent intent = new Intent(this, EventsList.class).putExtra("EventSet", mEventSet).putExtra("EventMap", mEventMap);
         startActivity(intent);
+        finish();
     }
 
     public void homeButton(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
