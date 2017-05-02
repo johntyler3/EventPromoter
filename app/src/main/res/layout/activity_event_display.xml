@@ -46,7 +46,6 @@
             android:id="@+id/display_nameOrgEdit"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:maxLines="1"
             />
         <TextView
             android:text="@string/location"
@@ -74,7 +73,7 @@
             android:clickable="false"
             android:layout_width="130dp"
             android:layout_height="40sp"
-            android:layout_alignBaseline="@+id/display_locationEdit"
+            android:layout_alignBottom="@+id/display_locationEdit"
             android:layout_below="@+id/display_location"
             android:layout_toRightOf="@+id/display_locationEdit"
             android:id="@+id/display_roomEdit"
@@ -141,7 +140,6 @@
             android:id="@+id/display_foodProvidedEdit"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:maxLines="1"
             />
 
         <TextView
@@ -163,7 +161,6 @@
             android:id="@+id/display_extraDetailsEdit"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:maxLines="1"
             />
 
 

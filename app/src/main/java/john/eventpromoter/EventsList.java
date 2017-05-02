@@ -151,6 +151,7 @@ public class EventsList extends AppCompatActivity {
     public void viewMap(View view){
         Intent intent = new Intent(this, MapsActivity.class).putExtra("EventSet", mEventSet).putExtra("EventMap", mEventMap);
         startActivity(intent);
+        finish();
     }
 
     public void homeButton(View view){
