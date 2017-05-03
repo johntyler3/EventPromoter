@@ -17,8 +17,8 @@
                     android:title="@string/sort_by_time_date"
                     android:checked="true" />
             </group>
-            <item android:id="@+id/filter_events"
-                android:title="@string/filter" />
+            <!--<item android:id="@+id/filter_events"-->
+                <!--android:title="@string/filter" />-->
         </menu>
     </item>
 </menu>

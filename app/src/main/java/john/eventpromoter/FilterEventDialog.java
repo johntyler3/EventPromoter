@@ -57,14 +57,29 @@ public class FilterEventDialog extends DialogFragment {
         }).setPositiveButton(R.string.close,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Toast.makeText(getActivity(), "Something was pressed " + itemsChecked.toString(), Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getActivity(), "Something was pressed " + itemsChecked.toString(), Toast.LENGTH_LONG).show();
 //                        sharedPreferences = getActivity().getSharedPreferences("Filter", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         // TODO: 5/3/2017 Make sure that the filters are cleared so as not to contaminate results. Having trouble storing, adding to filter, if only more time
-                        if (itemsChecked.contains("4")){
-                            editor.putBoolean("food", true);
+                        if (itemsChecked.contains("0")){
+                            editor.putBoolean("dateCheck", true);
                         }
-                        editor.apply();
+                        if (itemsChecked.contains("1")){
+                            editor.putBoolean("timeCheck", true);
+                        }
+                        if (itemsChecked.contains("2")){
+                            editor.putBoolean("buildingCheck", true);
+                        }
+                        if (itemsChecked.contains("3")){
+                            editor.putBoolean("orgCheck", true);
+                        }
+                        if (itemsChecked.contains("4")){
+                            editor.putBoolean("foodCheck", true);
+                        }
+                        Log.d(TAG, "Setting FilterCheck as false");
+                        editor.putBoolean("FilterCheck", false);
+
+                        editor.commit();
                         int year, month, day;
                         year = month = day = -1;
                         if (itemsChecked.contains("0")){
@@ -73,8 +88,11 @@ public class FilterEventDialog extends DialogFragment {
                             day = sharedPreferences.getInt("day", -1);
                         }
                         Set<String> buildingSet = sharedPreferences.getStringSet("buildings", null);
-                        Log.d(TAG, "Year: " + year + " Month: " + month + " Day: " + day + " Buildings: " + buildingSet.toString());
+                        Log.d(TAG, "Year: " + year + " Month: " + month + " Day: " + day);
+                        // // TODO: 5/3/2017 call the method that will filter here?
+
                         dismiss();
+
                     }
                 });
 

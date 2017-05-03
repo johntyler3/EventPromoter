@@ -59,7 +59,7 @@ public class BuildingPickerDialogFragment extends DialogFragment {
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         Set<String> set = new HashSet<String>(buildingsSelected);
                         editor.putStringSet("buildings", set);
-                        editor.apply();
+                        editor.commit();
                         dismiss();
                     }
                 });

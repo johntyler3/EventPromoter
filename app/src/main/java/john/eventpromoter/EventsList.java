@@ -1,6 +1,7 @@
 package john.eventpromoter;
 
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
 public class EventsList extends AppCompatActivity {
 
@@ -34,6 +36,7 @@ public class EventsList extends AppCompatActivity {
 
     private HashSet mEventSet;
     private HashMap mEventMap;
+    private HashMap mFilteredMap;
 
     private ListView mView;
     private ArrayList eventList;
@@ -77,14 +80,14 @@ public class EventsList extends AppCompatActivity {
             case R.id.sort_by_date_time:
                 sortList(TimeDateComparator, "time and date");
                 return true;
-            case R.id.filter_events:
-                FilterEventDialog filterEventDialog = new FilterEventDialog();
-                Bundle bundle = new Bundle();
-//                bundle.put
-//                filterEventDialog.setArguments();
-                filterEventDialog.show(fragmentManager, "filter");
-
-                return true;
+//            case R.id.filter_events:
+//                FilterEventDialog filterEventDialog = new FilterEventDialog();
+//                Bundle bundle = new Bundle();
+////                bundle.put
+////                filterEventDialog.setArguments();
+//                filterEventDialog.show(fragmentManager, "filter");
+//                sharedPreferences = this.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -243,4 +246,92 @@ public class EventsList extends AppCompatActivity {
             return year1 - year2;
         }
     };
+
+    public Map<String, Event> filter(Map<String, Event> eventMap,
+                                            int year, int month, int day,
+                                            int hour, int minute,
+                                            ArrayList<String> building,
+                                            ArrayList<String> orgName,
+                                            boolean food){
+        Map<String, Event> filteredEvents = new HashMap<>();
+        Log.d(TAG, "Beginning Event Query");
+        boolean filterDate = false;
+        boolean filterTime = false;
+        boolean filterBuilding = false;
+        boolean filterOrg = false;
+//        boolean filterFood = food;
+        if (year != -1){
+            filterDate = true;
+        }
+        if (hour != -1){
+            filterTime = true;
+        }
+        if (building != null){
+            filterBuilding = true;
+        }
+        if (orgName != null){
+            filterOrg = true;
+        }
+//        if (food != null){
+//            filterFood = true;
+//        }
+
+        for (Event event: eventMap.values()) {
+            boolean passFilterDate = false;
+            boolean passFilterTime = false;
+            boolean passFilterBuilding = false;
+            boolean passFilterOrg = false;
+            boolean passFilterFood = false;
+            // ================================================DATE================================
+            if(filterDate){
+                if (event.getYear() == year && event.getMonth() == month && event.getDay() == day){
+                    passFilterDate = true;
+                }
+            }
+            else{ // If date is not one of the parameters events are being filtered on it automatically passes
+                passFilterDate = true;
+            }
+            // ================================================TIME=================================
+            if(filterTime){
+                if (event.getHour() == hour && event.getMinute() == minute){
+                    passFilterTime = true;
+                }
+            }
+            else{
+                passFilterTime = true;
+            }
+            // ============================================BUILDING=================================
+            if(filterBuilding){
+                if (building.contains(event.getBuildingCode())){
+                    passFilterBuilding = true;
+                }
+            }
+            else{
+                passFilterBuilding = true;
+            }
+            // ==============================================ORG====================================
+            if(filterOrg){
+                if (orgName.contains(event.getOrgName())){
+                    passFilterOrg = true;
+                }
+            }
+            else{
+                passFilterOrg = true;
+            }
+            // ==============================================FOOD===================================
+            if(food){
+                if (event.getFoodProvided() != null)
+                    passFilterFood = true;
+            }
+            else{
+                passFilterFood = true;
+            }
+
+
+            if (passFilterBuilding && passFilterDate && passFilterFood && passFilterOrg && passFilterTime){
+                filteredEvents.put(event.getEventID(), event);
+            }
+        }
+        return filteredEvents;
+    }
 }

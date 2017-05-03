@@ -32,7 +32,7 @@ public class TimePickerDialogFragmentFilter extends DialogFragment implements Ti
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt("HourOfDay", hourOfDay);
         editor.putInt("Minute", minute);
-        editor.apply();
+        editor.commit();
         // Do something with the time chosen by the user
     }
 

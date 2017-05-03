@@ -38,7 +38,7 @@ public class DatePickerDialogFragmentFilter extends DialogFragment implements Da
         editor.putInt("year", year);
         editor.putInt("month", month);
         editor.putInt("day", day);
-        editor.apply();
+        editor.commit();
         // Do something with the time chosen by the user
     }
 }
