@@ -3,7 +3,6 @@ package john.eventpromoter;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
-//import android.icu.util.Calendar;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,12 +12,8 @@ import android.widget.TimePicker;
 
 import java.util.Calendar;
 
-/**
- * Created by Nathan Seegmiller on 4/1/2017.
- */
-
-public class TimePickerDialogFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
-    private static final String PREF_NAME = "EventPrefs";
+public class TimePickerDialogFragmentFilter extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
+    private static final String PREF_NAME = "EventList";
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -38,27 +33,7 @@ public class TimePickerDialogFragment extends DialogFragment implements TimePick
         editor.putInt("HourOfDay", hourOfDay);
         editor.putInt("Minute", minute);
         editor.apply();
-        EditText editText = (EditText) this.getActivity().findViewById(R.id.timeEdit);
-        editText.setText(generateTimeString(hourOfDay, minute));
         // Do something with the time chosen by the user
-    }
-
-    public static String generateTimeString(int hour, int minute){
-        String minuteString = String.valueOf(minute);
-        String AM_PM = "AM";
-        if(minute < 10){
-            minuteString = "0" + minute;
-        }
-        if (hour >= 12){
-            if (hour > 12){
-                hour = hour - 12;
-            }
-            AM_PM = "PM";
-        }
-        if (hour == 0){
-            hour = 12;
-        }
-        return hour + ": " + minuteString + " " + AM_PM;
     }
 
 }

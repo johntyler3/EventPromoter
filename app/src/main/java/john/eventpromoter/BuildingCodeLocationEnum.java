@@ -144,4 +144,8 @@ public enum BuildingCodeLocationEnum {
         this.longitude = longitude;
         this.buildingName = buildingName;
     }
+
+    public String toString(){
+        return name() + " - " + getBuildingName();
+    }
 }

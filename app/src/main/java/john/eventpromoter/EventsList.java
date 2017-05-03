@@ -1,6 +1,8 @@
 package john.eventpromoter;
 
+import android.app.FragmentManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -26,6 +28,9 @@ import java.util.List;
 public class EventsList extends AppCompatActivity {
 
     private static final String TAG = "EventsList";
+
+    private SharedPreferences sharedPreferences;
+    private static final String PREF_NAME = "Filter";
 
     private HashSet mEventSet;
     private HashMap mEventMap;
@@ -57,6 +62,8 @@ public class EventsList extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Right now is made to handle ONLY sorting options in the menu
+        FragmentManager fragmentManager = getFragmentManager();
+
         if (item.isChecked()) item.setChecked(false);
         else item.setChecked(true);
 
@@ -69,6 +76,14 @@ public class EventsList extends AppCompatActivity {
                 return true;
             case R.id.sort_by_date_time:
                 sortList(TimeDateComparator, "time and date");
+                return true;
+            case R.id.filter_events:
+                FilterEventDialog filterEventDialog = new FilterEventDialog();
+                Bundle bundle = new Bundle();
+//                bundle.put
+//                filterEventDialog.setArguments();
+                filterEventDialog.show(fragmentManager, "filter");
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
